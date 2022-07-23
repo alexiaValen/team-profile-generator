@@ -1,4 +1,4 @@
-const Employee = require('../lib-classes')//add employee class
+const Employee = require('../lib-classes/Employee')
 
 test('initiate employee', () => {
     const e = new Employee();

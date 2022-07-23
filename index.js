@@ -102,7 +102,26 @@ async function promptQuestions() {
     const addTeamMemberAnswers = await inquirer
     .prompt([
         {
-         name: 'addMember',   
-        },
+         name: 'addMember',
+         type: 'list',
+         choices: ['Add a new member', 'Create Team'],
+         message: 'What would you like to do next?'   
+        }
     ])
+
+    if (addTeamMemberAnswers.addMember === 'Add a new member') {
+        return promptQuestions()
+    }
+    return createTeam();
+}
+
+promptQuestions();
+
+function createTeam() {
+    console.log('New Member', newStaffMemberData)
+    fs.writeFileSync(
+        "./dist-output/index.html",
+        generateTeam(newStaffMemberData),
+        'utf-8'
+    );
 }

@@ -1,0 +1,9 @@
+.team-header{
+    background-color: crimson;
+    height: 150px;
+    color: white;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+    padding: 25px;
+}
